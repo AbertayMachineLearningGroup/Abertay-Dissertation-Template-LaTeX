@@ -1,0 +1,117 @@
+\documentclass[12pt]{dissertation} 
+
+%load any additional packages
+\usepackage[bmargin=1.5in]{geometry}
+\setlength{\footskip}{50pt}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{titlesec}
+\usepackage{pgfplots}
+\usepackage[]{algorithm2e}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,bm}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage{fancyvrb}
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage{tikzscale}
+\usepackage{multicol}
+\usepackage[capitalise]{cleveref}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[printonlyused]{acronym}
+\usepackage{indentfirst}
+
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+
+\definecolor{blue}{RGB}{38,139,210}
+\definecolor{cyan}{RGB}{42,161,152}
+\definecolor{green}{RGB}{0,102,0}
+\definecolor{violet}{RGB}{108,113,196}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{yellow}{RGB}{244,229,66}
+\definecolor{red}{RGB}{220,50,47}
+\definecolor{base01}{RGB}{88,110,117}
+\definecolor{base02}{RGB}{7,54,66}
+\definecolor{base03}{RGB}{0,43,54}
+
+\newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
+\newcommand{\R}{\mathbb{R}}
+
+\titleformat{\chapter}[display] 
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{5pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{5pt}
+
+\title{Dissertation Title} 
+
+\author{Author Name}             %your name
+\college{Division of Cyber Security}  %your college
+
+%\renewcommand{\submittedtext}{change the default text here if needed}
+\degree{Bachelor of Science with Honours \\in\\ Ethical Hacking and Computer Security}     %the degree
+\degreedate{\small \textit{\today}}         %the degree date
+
+%end the preamble and start the document
+\begin{document}
+
+%this baselineskip gives sufficient line spacing for an examiner to easily
+%markup the thesis with comments
+\baselineskip=18pt plus1pt
+
+%set the number of sectioning levels that get number and appear in the contents
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+
+\maketitle                  % create a title page from the preamble info
+\include{dedication}        % include a dedication.tex file
+\include{acknowledgements}   % include an acknowledgements.tex file
+\include{abstract}          % include the abstract
+
+\begin{romanpages}          % start roman page numbering
+\tableofcontents            % generate and include a table of contents
+\listoffigures              % generate and include a list of figures
+\begingroup
+\let\clearpage\relax
+\bigskip
+\listoftables
+\endgroup
+\end{romanpages}            % end roman page numbering
+
+%\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+
+%now include the files of latex for each of the chapters etc
+\include{chapter1}
+\include{chapter2}
+
+\include{conclusion}
+
+\section*{Acronyms}
+\begin{acronym}
+	\acro{ACC}{List of Accronyms}
+
+\end{acronym}
+
+%now enable appendix numbering format and include any appendices
+%\appendix
+%\include{appendix1}
+
+
+%uncomment next line to change bibliography name to references
+%\renewcommand{\bibname}{References}
+\bibliography{bibliography}        %use a bibtex bibliography file refs.bib
+\bibliographystyle{agsm}  %use the plain bibliography style
+
+\end{document}
+
